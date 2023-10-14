@@ -15,6 +15,8 @@ final class ResultViewController: UIViewController {
     /// Определить наиболеечасто встречающегося тип животного
     /// Отобразить результаты в соответствии с этим животным
     /// 
+    ///4
+    ///
    
 //    tabBar.items?.last.is
 //    tabBarController?.tabBar.items?.last = false
