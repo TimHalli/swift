@@ -16,6 +16,7 @@ final class ResultViewController: UIViewController {
     /// Отобразить результаты в соответствии с этим животным
     /// 
     ///4
+    ///5
     ///
    
 //    tabBar.items?.last.is
