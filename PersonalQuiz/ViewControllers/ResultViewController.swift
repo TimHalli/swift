@@ -4,14 +4,16 @@ final class ResultViewController: UIViewController {
 
     @IBOutlet weak var animalLabel: UILabel!
     @IBOutlet weak var describeLabel: UILabel!
-
+    
     var resultAnswers: [Answer] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         findAnimal()
     }
+    
+   
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
@@ -21,16 +23,15 @@ final class ResultViewController: UIViewController {
         print("\(type(of: self)) has been deallocated")
     }
 }
-
-// MARK: - Private Methods
-private extension ResultViewController {
+extension ResultViewController {
     private func findAnimal() {
         
-        let dublicateAnimal = Dictionary(grouping: resultAnswers, by: {$0.animal}).filter { $1.count > 1 ? true : false }.keys
-        let charAnimal = (dublicateAnimal.first?.rawValue)!
-
         resultAnswers.forEach {_ in
-            if !dublicateAnimal.isEmpty {
+            
+            let duplicateAnimal = Dictionary(grouping: resultAnswers, by: {$0.animal}).filter { $1.count > 1 }.keys
+            
+            if !duplicateAnimal.isEmpty {
+                let charAnimal = (duplicateAnimal.first?.rawValue)!
                 
                 switch charAnimal {
                 case "🐶":
@@ -42,7 +43,7 @@ private extension ResultViewController {
                 default:
                     getAnimal(animal: charAnimal, describe: Animal.dog.definition)
                 }
-            } else {
+            } else if duplicateAnimal.isEmpty || duplicateAnimal.count == 2 {
                 getAnimal(animal: "🐙", describe: "Ни рыба ни мясо!")
             }
         }
