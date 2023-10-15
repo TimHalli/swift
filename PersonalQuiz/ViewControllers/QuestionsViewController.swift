@@ -1,10 +1,3 @@
-//
-//  QuestionsViewController.swift
-//  PersonalQuiz
-//
-//  Created by Alexey Efimov on 07.08.2023.
-//
-
 import UIKit
 
 final class QuestionsViewController: UIViewController {
@@ -39,7 +32,13 @@ final class QuestionsViewController: UIViewController {
         rangedSlider.maximumValue = answerCount
         rangedSlider.value = answerCount / 2
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let resultVC = segue.destination as? ResultViewController {
+            resultVC.resultAnswers = answersChosen
+        }
+    }
+    
     // MARK: - IB Actions
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
@@ -54,7 +53,6 @@ final class QuestionsViewController: UIViewController {
                 answersChosen.append(answer)
             }
         }
-        
         nextQuestion()
     }
     
@@ -142,5 +140,6 @@ private extension QuestionsViewController {
         }
         
         performSegue(withIdentifier: "showResult", sender: nil)
+       
     }
 }

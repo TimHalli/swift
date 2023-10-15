@@ -15,7 +15,7 @@ struct Question {
                     Answer(title: "Кукуруза", animal: .turtle)
                 ]
             ),
-            Question(
+           Question(
                 title: "Что вам нравится больше?",
                 type: .multiple,
                 answers: [
