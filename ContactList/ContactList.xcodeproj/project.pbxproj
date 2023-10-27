@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840D61902AEBC8CC0060D3AA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8480DE832AE83DF700E92EA9 /* DataStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		8480DE5C2AE8307700E92EA9 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +74,7 @@
 		8480DE672AE8307700E92EA9 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				840D61902AEBC8CC0060D3AA /* Data */,
 				8480DE802AE8310900E92EA9 /* Resources */,
 				8480DE7F2AE8310000E92EA9 /* Storyboards */,
 				8480DE7E2AE830F800E92EA9 /* App */,
@@ -90,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				8480DE812AE83D3100E92EA9 /* Person.swift */,
-				8480DE832AE83DF700E92EA9 /* DataStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
