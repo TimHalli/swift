@@ -7,7 +7,7 @@ struct Person {
     let phoneNumber: String
     
     static func getData() -> [Person] {
-        let data = DataStore()
+        let data =  DataStore.shared
         
         let uniqueNames = Array(Set(data.names))
         let uniqueSurname = Array(Set(data.surnames))
